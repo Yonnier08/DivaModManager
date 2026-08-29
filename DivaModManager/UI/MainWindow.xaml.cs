@@ -162,11 +162,11 @@ namespace DivaModManager
                 //if (await AutoUpdater.CheckForDMMUpdate(new CancellationTokenSource()))
                 //    Close();
                 // Check for DML update only if its already setup
-                if (!String.IsNullOrEmpty(Global.config.Configs[Global.config.CurrentGame].ModLoaderVersion))
-                {
-                    Global.logger.WriteLine("Checking for DivaModLoader update...", LoggerType.Info);
-                    await Setup.CheckForDMLUpdate(new CancellationTokenSource());
-                }
+                //if (!String.IsNullOrEmpty(Global.config.Configs[Global.config.CurrentGame].ModLoaderVersion))
+                //{
+                //    Global.logger.WriteLine("Checking for DivaModLoader update...", LoggerType.Info);
+                //    await Setup.CheckForDMLUpdate(new CancellationTokenSource());
+                //}
             });
         }
         private async void WindowLoaded(object sender, RoutedEventArgs e)
