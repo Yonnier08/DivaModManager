@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Collections.ObjectModel;
@@ -158,9 +158,9 @@ namespace DivaModManager
             {
                 Global.logger.WriteLine("Checking for mod updates...", LoggerType.Info);
                 await ModUpdater.CheckForUpdates(Global.config.Configs[Global.config.CurrentGame].ModsFolder, this);
-                Global.logger.WriteLine("Checking for Diva Mod Manager update...", LoggerType.Info);
-                if (await AutoUpdater.CheckForDMMUpdate(new CancellationTokenSource()))
-                    Close();
+                //Global.logger.WriteLine("Checking for Diva Mod Manager update...", LoggerType.Info);
+                //if (await AutoUpdater.CheckForDMMUpdate(new CancellationTokenSource()))
+                //    Close();
                 // Check for DML update only if its already setup
                 if (!String.IsNullOrEmpty(Global.config.Configs[Global.config.CurrentGame].ModLoaderVersion))
                 {
