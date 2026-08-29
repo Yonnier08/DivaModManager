@@ -97,6 +97,7 @@
                         </Border>
                     </Popup>
                     <Image Name="LoadingBar" Grid.Row="0" Panel.ZIndex="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="100"/>
+                    <StackPanel Grid.Row="2" Margin="10,-5,10,5" Orientation="Horizontal">
                         <TextBlock VerticalAlignment="Center" FontFamily="{StaticResource AnekLatin}" Foreground="#909090" Text="{Binding Path=Owner.Name}">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
