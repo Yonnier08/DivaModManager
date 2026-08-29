@@ -6,6 +6,7 @@
         xmlns:dd="urn:gong-wpf-dragdrop"
         xmlns:fa5="http://schemas.fontawesome.com/icons/"
         xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns:local="clr-namespace:DivaModManager"
         Background="#131313"
         Title="Diva Mod Manager" SizeChanged="OnResize"
         mc:Ignorable="d" Closing="Window_Closing" WindowStartupLocation="CenterScreen"
@@ -110,14 +111,14 @@
                                 </Style>
                             </TextBlock.Style>
                         </TextBlock>
-                        <Image VerticalAlignment="Center" Source="{Binding Path=Owner.Upic}" Height="25"/>
+                        <Image VerticalAlignment="Center" local:ThrottledImage.Uri="{Binding Path=Owner.Upic}" Height="25"/>
                     </StackPanel>
                     <Grid Name="CatGrid" HorizontalAlignment="Center" Grid.Row="5" Background="Transparent">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Image Name="CatIcon" Grid.Column="0" VerticalAlignment="Center" Source="{Binding Path=Category.Icon}" Margin="0,0,10,0" Stretch="Uniform" Height="35" Width="35"/>
+                        <Image Name="CatIcon" Grid.Column="0" VerticalAlignment="Center" local:ThrottledImage.Uri="{Binding Path=Category.Icon}" Margin="0,0,10,0" Stretch="Uniform" Height="35" Width="35"/>
                         <TextBlock Name="CatText" FontFamily="{StaticResource AnekLatin}" Grid.ColumnSpan="2" VerticalAlignment="Center" Foreground="#f2f2f2" Text="{Binding Path=CategoryName}" TextTrimming="WordEllipsis">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -376,7 +377,7 @@
                     </Popup>
                     <Image Name="LoadingBar" Grid.Row="0" Panel.ZIndex="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="100"/>
                     <StackPanel Grid.Row="2" Margin="10,-5,10,5" Orientation="Horizontal">
-                        <Image VerticalAlignment="Center" Source="{Binding Path=Authors[0].Avatar}" Margin="0,0,10,0" Height="35"/>
+                        <Image VerticalAlignment="Center" local:ThrottledImage.Uri="{Binding Path=Authors[0].Avatar}" Margin="0,0,10,0" Height="35"/>
                         <TextBlock VerticalAlignment="Center" FontFamily="{StaticResource AnekLatin}" Foreground="#909090" Text="{Binding Path=Authors[0].Name}"/>
                     </StackPanel>
                     <Grid Name="CatGrid" HorizontalAlignment="Center" Grid.Row="5" Background="Transparent">
