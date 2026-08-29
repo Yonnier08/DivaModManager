@@ -1,6 +1,6 @@
 name: Debug Build and Test
 
-on: [push, pull_request]
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build-release:
@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build release
-        run: dotnet publish -c Release -p:PublishSingleFile=true --self-contained false
+        run: dotnet publish -c Release -r win10-x64 -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true --self-contained true
 
       # Upload build artifact
       - name: Upload Artifact
